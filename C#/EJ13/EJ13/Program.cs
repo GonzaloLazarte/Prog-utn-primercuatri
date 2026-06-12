@@ -20,16 +20,16 @@ namespace EJ13 {
                 Console.Write("ingrese la cantidad de alumnos que asistiran al viaje escolar: ");
                 if (int.TryParse(Console.ReadLine(), out alumnos) && alumnos > 0) {
                     if (alumnos > 100) {
-                        pasaje = 20;
+                        pasaje = (double)Pasaje.pasaje1;
                     }
                     else if (alumnos >= 50 && alumnos <= 100) {
-                        pasaje = 35;
+                        pasaje = (double)Pasaje.pasaje2;
                     }
-                    else if (alumnos >= 2 && alumnos <= 49) {
-                        pasaje = 40;
+                    else if (alumnos >= 20 && alumnos <= 49) {
+                        pasaje = (double)Pasaje.pasaje3;
                     }
                     else if (alumnos < 20) {
-                        pasaje = 70;
+                        pasaje = (double)Pasaje.pasaje4;
                     }
                     break;
                 }
@@ -40,6 +40,13 @@ namespace EJ13 {
             Console.WriteLine("=====================COSTOS DE LOS PASAJES==========================");
             Console.WriteLine($"para {alumnos} el costo de pasaje para cada uno es de: ${pasaje}");
             Console.WriteLine($"el total para que viajen todos los alumnos es de: ${total = alumnos * pasaje}");
+            Console.ReadKey();
+        }
+        public enum Pasaje { 
+            pasaje1 = 20,
+            pasaje2 = 35,
+            pasaje3 = 40,
+            pasaje4 = 70
         }
     }
 }
