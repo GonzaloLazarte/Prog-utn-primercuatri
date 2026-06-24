@@ -72,6 +72,5 @@ namespace EJ11 {
                 Menores.numeroVentas++;
             }
         }
-
     }
 }
